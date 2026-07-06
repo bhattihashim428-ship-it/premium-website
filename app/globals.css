@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============ THEME: DARK (default) ============ */
+:root,
+.theme-dark {
+  --background: 0 0% 4%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 7%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 7%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 45 80% 52%;
+  --primary-foreground: 0 0% 5%;
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 64%;
+  --accent: 45 80% 52%;
+  --accent-foreground: 0 0% 5%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 16%;
+  --input: 0 0% 16%;
+  --ring: 45 80% 52%;
+  --gold: 45 80% 52%;
+  --gold-foreground: 0 0% 5%;
+  --chart-1: 45 80% 52%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 200 70% 50%;
+  --chart-4: 30 80% 55%;
+  --chart-5: 340 75% 55%;
+  --radius: 0.75rem;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* ============ THEME: LIGHT ============ */
+.theme-light {
+  --background: 40 30% 98%;
+  --foreground: 0 0% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 10%;
+  --primary: 45 80% 40%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 40 20% 92%;
+  --secondary-foreground: 0 0% 15%;
+  --muted: 40 20% 92%;
+  --muted-foreground: 0 0% 40%;
+  --accent: 45 80% 40%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 40 20% 85%;
+  --input: 40 20% 85%;
+  --ring: 45 80% 40%;
+  --gold: 45 80% 40%;
+  --gold-foreground: 0 0% 100%;
+  --chart-1: 45 80% 40%;
+  --chart-2: 160 60% 40%;
+  --chart-3: 200 70% 45%;
+  --chart-4: 30 80% 50%;
+  --chart-5: 340 75% 50%;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(0, 0, 0, 0.08);
+}
+
+/* ============ THEME: MIDNIGHT BLUE ============ */
+.theme-midnight {
+  --background: 225 60% 6%;
+  --foreground: 210 40% 96%;
+  --card: 225 50% 10%;
+  --card-foreground: 210 40% 96%;
+  --popover: 225 50% 10%;
+  --popover-foreground: 210 40% 96%;
+  --primary: 45 80% 55%;
+  --primary-foreground: 225 60% 8%;
+  --secondary: 225 40% 18%;
+  --secondary-foreground: 210 40% 96%;
+  --muted: 225 40% 18%;
+  --muted-foreground: 210 30% 65%;
+  --accent: 210 80% 60%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 225 40% 20%;
+  --input: 225 40% 20%;
+  --ring: 210 80% 60%;
+  --gold: 45 80% 55%;
+  --gold-foreground: 225 60% 8%;
+  --chart-1: 210 80% 60%;
+  --chart-2: 45 80% 55%;
+  --chart-3: 260 70% 65%;
+  --chart-4: 200 70% 55%;
+  --chart-5: 280 70% 65%;
+  --glass-bg: rgba(30, 50, 100, 0.15);
+  --glass-border: rgba(100, 150, 255, 0.12);
+}
+
+/* ============ THEME: EMERALD ============ */
+.theme-emerald {
+  --background: 160 50% 5%;
+  --foreground: 150 30% 96%;
+  --card: 160 40% 9%;
+  --card-foreground: 150 30% 96%;
+  --popover: 160 40% 9%;
+  --popover-foreground: 150 30% 96%;
+  --primary: 45 80% 55%;
+  --primary-foreground: 160 50% 8%;
+  --secondary: 160 30% 16%;
+  --secondary-foreground: 150 30% 96%;
+  --muted: 160 30% 16%;
+  --muted-foreground: 150 25% 65%;
+  --accent: 150 60% 50%;
+  --accent-foreground: 160 50% 8%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 160 30% 18%;
+  --input: 160 30% 18%;
+  --ring: 150 60% 50%;
+  --gold: 45 80% 55%;
+  --gold-foreground: 160 50% 8%;
+  --chart-1: 150 60% 50%;
+  --chart-2: 45 80% 55%;
+  --chart-3: 180 60% 45%;
+  --chart-4: 120 60% 50%;
+  --chart-5: 90 60% 50%;
+  --glass-bg: rgba(0, 60, 40, 0.15);
+  --glass-border: rgba(100, 220, 150, 0.12);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid var(--glass-border);
+  }
+  .glass-card {
+    @apply glass rounded-2xl;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  .gold-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #D4AF37 0%, #F4D77A 50%, #D4AF37 100%);
+  }
+  .gold-border {
+    border: 1px solid transparent;
+    background-image: linear-gradient(var(--card), var(--card)), linear-gradient(135deg, #D4AF37, #F4D77A, #D4AF37);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+  .premium-gradient {
+    background: radial-gradient(ellipse at top, hsl(var(--primary) / 0.08), transparent 60%),
+                radial-gradient(ellipse at bottom, hsl(var(--accent) / 0.05), transparent 60%);
+  }
+  .shimmer-bg {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+    background-size: 1000px 100%;
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: hsl(var(--background)); }
+::-webkit-scrollbar-thumb { background: hsl(var(--primary) / 0.4); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.6); }
+
+html { scroll-behavior: smooth; }
