@@ -21,9 +21,21 @@ export default function AdminWithdrawalsPage() {
   const [active, setActive] = useState<any>(null);
   const [remarks, setRemarks] = useState('');
 
-  const load = async () => {
-    const { data } = await supabase.from('withdrawals').select('*, profiles(full_name, email, wallet_balance)').order('created_at', { ascending: false });
-    setItems(data || []);
+ const load = async () => {
+  const { data, error } = await supabase
+    .from('withdrawals')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  console.log("Withdrawals:", data);
+  console.log("Error:", error);
+
+  if (error) {
+    toast.error(error.message);
+  }
+
+  setItems(data || []);
+};
   };
   useEffect(() => { load(); }, []);
 
