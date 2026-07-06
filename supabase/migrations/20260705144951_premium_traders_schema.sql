@@ -282,6 +282,20 @@ CREATE INDEX IF NOT EXISTS idx_notifications_user ON public.notifications(user_i
 
 DROP POLICY IF EXISTS "notifications_select_own" ON public.notifications;
 CREATE POLICY "notifications_select_own" ON public.notifications FOR SELECT TO authenticated USING (auth.uid() = user_id);
+DROP POLICY IF EXISTS "notifications_admin_insert"
+ON public.notifications;
+CREATE POLICY "notifications_admin_insert"
+ON public.notifications
+FOR INSERT
+TO authenticated
+WITH CHECK (
+  EXISTS (
+    SELECT 1
+    FROM public.profiles
+    WHERE profiles.id = auth.uid()
+      AND profiles.role = 'admin'
+  )
+);
 DROP POLICY IF EXISTS "notifications_insert_own" ON public.notifications;
 CREATE POLICY "notifications_insert_own" ON public.notifications FOR INSERT TO authenticated WITH CHECK (auth.uid() = user_id);
 DROP POLICY IF EXISTS "notifications_update_own" ON public.notifications;
